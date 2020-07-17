@@ -1,0 +1,172 @@
+$firstDateColor: rgb(232, 193, 160);
+$secondDateColor: rgb(244, 117, 96);
+
+.App {
+  background-color: #353f52;
+  height: 100%;
+  font-family: 'Open Sans', sans-serif;
+}
+
+#login {
+  text-align: center;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: white;
+
+  .prompt-text {
+    font-size: 18px;
+    font-weight: 500;
+  }
+
+  img {
+    height: 100px;
+  }
+
+  form {
+    text-align: left;
+  }
+}
+
+.first-date-picker {
+  .react-datepicker__day--selected {
+    background-color: $firstDateColor;
+    color: #000;
+    font-weight: 700;
+  }
+}
+
+.second-date-picker {
+  .react-datepicker__day--selected {
+    background-color: $secondDateColor;
+    color: #000;
+    font-weight: 700;
+  }
+}
+
+.react-datepicker__day--keyboard-selected {
+  border: none;
+  background-color: transparent;
+  color: #000;
+}
+
+.react-datepicker__day-name, .react-datepicker__day, .react-datepicker__time-name {
+  line-height: inherit;
+}
+
+.tooltip-outer {
+  background: white;
+  color: inherit;
+  font-size: inherit;
+  border-radius: 2px;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 1px 2px;
+  padding: 5px 9px;
+}
+
+.tooltip-flex {
+  white-space: pre;
+  display: flex;
+  align-items: center;
+}
+
+.tooltip-color {
+  display: block;
+  width: 12px;
+  height: 12px;
+  margin-right: 7px;
+}
+
+.main-header {
+  color: #fff;
+  border-bottom: 1px solid #4c5059;
+}
+
+// make button group fill full width of parent
+.btn-group.special {
+  display: flex;
+}
+
+.special .btn {
+  flex: 1
+}
+
+.logout {
+  position: absolute;
+  top: 11px;
+  right: 15px;
+  cursor: pointer;
+  color: white;
+  font-size: 14px;
+}
+
+.sensor-information {
+  color: #fff;
+  padding: 15px 0;
+
+  img {
+    width: 100%;
+  }
+
+  .title {
+    font-weight: 700;
+    font-size: 13px;
+    text-transform: uppercase;
+    margin-bottom: 6px;
+  }
+}
+
+.key-value {
+  padding-bottom: 10px;
+  font-size: 12px;
+  font-weight: 600;
+  padding-left: 12px;
+  text-transform: uppercase;
+
+  .value {
+    text-decoration: none;
+    font-weight: 400;
+    text-transform: none;
+  }
+}
+
+.chart-title {
+  position: absolute;
+  color: #fff;
+  font-weight: 800;
+  font-size: 25px;
+  text-align: center;
+  width: 100%;
+
+  .mode {
+    text-transform: capitalize;
+  }
+
+  .first-date {
+    text-decoration: underline;
+    text-decoration-color: $firstDateColor
+  }
+
+  .second-date {
+    text-decoration: underline;
+    text-decoration-color: $secondDateColor
+  }
+}
+
+.chart {
+  min-height: 400px;
+  position: relative;
+}
+
+.spinner-container {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  z-index: 5;
+  color: #fff;
+
+  .spinner-border {
+    margin: 0 auto;
+  }
+}
