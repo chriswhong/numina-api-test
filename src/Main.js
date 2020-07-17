@@ -119,12 +119,12 @@ const Main = ({ setToken }) => {
 
               </div>
               <div className='col-12 col-md-4'>
-                <div className='title'>Location</div>
+                <div className='title'>Area Map</div>
                 <GLMap />
               </div>
 
               <div className='col-12 col-md-4'>
-                <div className='title'>Field of View</div>
+                <div className='title'>Sample Image</div>
                 <img src='https://s3.amazonaws.com/numina-branding-assets/sample-data/default-images/SANDBOX.png' alt='numina sandbox camera view'/>
               </div>
             </div>
