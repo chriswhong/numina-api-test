@@ -10,7 +10,7 @@ const Map = ReactMapboxGl({
 
 const GLMap = () => (
   <Map
-    style='mapbox://styles/mapbox/light-v9'
+    style='mapbox://styles/mapbox/light-v9' // eslint-disable-line
     containerStyle={{
       paddingTop: '75%',
       width: '100%'

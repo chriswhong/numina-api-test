@@ -63,29 +63,27 @@ const Main = ({ setToken }) => {
   const [secondDateData, setSecondDateData] = useState([])
   const [isLoading, setIsLoading] = useState(true)
 
-  const fetchData = async () => {
-    // fetch analytics data for the two selected dates
-    const [firstDateResponse, secondDateResponse] = await Promise.all([
-      fetchDateData(firstDate, mode),
-      fetchDateData(secondDate, mode)
-    ])
+  const triggerFetch = () => {
+    const fetchData = async () => {
+      // fetch analytics data for the two selected dates
+      const [firstDateResponse, secondDateResponse] = await Promise.all([
+        fetchDateData(firstDate, mode),
+        fetchDateData(secondDate, mode)
+      ])
 
-    setFirstDateData(firstDateResponse)
-    setSecondDateData(secondDateResponse)
-    setIsLoading(false)
+      setFirstDateData(firstDateResponse)
+      setSecondDateData(secondDateResponse)
+      setIsLoading(false)
+    }
+    setIsLoading(true)
+    fetchData()
   }
 
   // useEffect to fetch data on first load
-  useEffect(() => {
-    setIsLoading(true)
-    fetchData()
-  }, [])
+  useEffect(triggerFetch, [])
 
   // useEffect to fetch data when dates or mode are changed
-  useEffect(() => {
-    setIsLoading(true)
-    fetchData()
-  }, [firstDate, secondDate, mode])
+  useEffect(triggerFetch, [firstDate, secondDate, mode])
 
   const includeDates = getDateRangeArray(['2019-01-09T00:00', '2019-01-20T00:00'])
 
@@ -127,7 +125,7 @@ const Main = ({ setToken }) => {
 
               <div className='col-12 col-md-4'>
                 <div className='title'>Field of View</div>
-                <img src='https://s3.amazonaws.com/numina-branding-assets/sample-data/default-images/SANDBOX.png'/>
+                <img src='https://s3.amazonaws.com/numina-branding-assets/sample-data/default-images/SANDBOX.png' alt='numina sandbox camera view'/>
               </div>
             </div>
           </div>
